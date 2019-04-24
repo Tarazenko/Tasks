@@ -17,29 +17,33 @@ public class Necklace {
     private Stone[] stones;
     private int countStones;
 
-    public Necklace(){
+    public Necklace() {
         stones = new Stone[0];
         countStones = DEFAULT_COUNT;
     }
 
-    public Necklace(Stone... stones)throws NullException{
-        checkNullArray(stones);
-        this.stones = stones;
-        this.countStones = stones.length;
+    public Necklace(Stone... stones) {
+        if (stones == null) {
+            this.stones = new Stone[0];
+            this.countStones = DEFAULT_COUNT;
+        } else {
+            this.stones = stones;
+            this.countStones = stones.length;
+        }
     }
 
-    public int getSize(){
+    public int getSize() {
         return countStones;
     }
 
-    public void addStone(Stone stone)throws NullException{
+    public void addStone(Stone stone) throws NullException {
         checkNullObject(stone);
         stones = Arrays.copyOf(stones, stones.length + 1);
         stones[stones.length - 1] = stone;
         countStones++;
     }
 
-    public Stone getStone(int index) throws ArrayDimensionException{
+    public Stone getStone(int index) throws ArrayDimensionException {
         checkRange(index);
         return stones[index];
     }
@@ -49,6 +53,7 @@ public class Necklace {
             throw new ArrayDimensionException(DIMENSION_EXCEPTION_MESSAGE);
         }
     }
+
     private void checkNullArray(Stone[] array) throws NullException {
         if (array == null) {
             throw new NullException(NULL_ARRAY_EXCEPTION_MESSAGE);

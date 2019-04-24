@@ -9,7 +9,7 @@ public class Emerald extends Stone{
         super();
         transparency = DEFAULT_TRANSPARENCY;
     }
-    public Emerald(double weight, double cost, boolean transparency )throws InvalidValueException {
+    public Emerald(double weight, double cost, boolean transparency ) {
         super(weight,cost);
         this.transparency = transparency;
     }

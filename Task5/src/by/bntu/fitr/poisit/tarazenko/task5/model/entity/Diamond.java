@@ -9,7 +9,7 @@ public class Diamond extends Stone {
         super();
         shape = DEFAULT_SHAPE;
     }
-    public Diamond(double weight, double cost, String shape) throws InvalidValueException {
+    public Diamond(double weight, double cost, String shape){
         super(weight,cost);
         this.shape = shape;
     }

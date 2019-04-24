@@ -11,7 +11,7 @@ public class Sapphire extends Stone {
         color = DEFAULT_COLOR;
     }
 
-    public Sapphire(double weight, double cost, String color) throws InvalidValueException {
+    public Sapphire(double weight, double cost, String color){
         super(weight,cost);
         this.color = color;
     }

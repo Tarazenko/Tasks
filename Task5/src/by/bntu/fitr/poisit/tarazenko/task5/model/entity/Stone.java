@@ -9,23 +9,26 @@ public class Stone {
     private double cost;
     private double weight;
 
-    public Stone(){
+    public Stone() {
         cost = DEFAULT_COST;
         weight = DEFAULT_WEIGHT;
     }
 
-    public Stone(double weight, double cost) throws InvalidValueException {
-        checkForPositive(weight);
-        checkForPositive(cost);
-        this.weight = weight;
-        this.cost = cost;
+    public Stone(double weight, double cost) {
+        if (weight <= 0 || cost < 0) {
+            this.weight = DEFAULT_WEIGHT;
+            this.cost = DEFAULT_COST;
+        } else {
+            this.weight = weight;
+            this.cost = cost;
+        }
     }
 
     public double getCost() {
         return cost;
     }
 
-    public void setCost(double cost) throws InvalidValueException{
+    public void setCost(double cost) throws InvalidValueException {
         checkForPositive(cost);
         this.cost = cost;
     }

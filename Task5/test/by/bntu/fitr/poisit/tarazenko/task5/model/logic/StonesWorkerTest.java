@@ -16,9 +16,6 @@ public class StonesWorkerTest {
             new Sapphire(3, 200, "Green"),
             new Emerald(4.5, 400, false));
 
-    public StonesWorkerTest()throws NullException,InvalidValueException {
-    }
-
     @Test
     public void calculateWeigth1() throws ArrayDimensionException, NullException {
         try{
